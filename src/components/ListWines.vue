@@ -12,10 +12,10 @@
         <div class="txt-9">rating: {{ wine.rating }}</div>
         <div class="txt-9">year: {{ wine.year }}</div>
         <div class="comments">
-          <div class=" bold">comments:</div>
+          <div class="bold">comments:</div>
           <div class="txt-9 dark-grey-color">{{ wine.comment }}</div>
         </div>
-        <div class="price bold ">{{ wine.price }}</div>
+        <div class="price bold">{{ wine.price }}</div>
       </div>
     </div>
   </div>
@@ -37,9 +37,14 @@ export default {
     fetchWines() {
       const uri = `${process.env.VUE_APP_API_LOCATION}all`;
 
-      axios.get(uri).then(response => {
-        this.wines = response.data;
-      });
+      axios
+        .get(uri)
+        .then(response => {
+          this.wines = response.data;
+        })
+        .catch(err => {
+          console.error(err);
+        });
     }
   }
 };

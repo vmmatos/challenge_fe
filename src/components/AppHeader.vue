@@ -2,7 +2,6 @@
   <nav class="container navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <router-link class="pd-10" to="/">Wine App</router-link>
-
       <a
         role="button"
         class="navbar-burger burger"
